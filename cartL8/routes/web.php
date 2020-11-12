@@ -25,6 +25,11 @@ Route::get('/contactus', function () {
     return view('contact');
 });
 
+
+
+Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('addCategory');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
