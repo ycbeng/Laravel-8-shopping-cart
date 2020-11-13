@@ -28,7 +28,7 @@ class CategoryController extends Controller
 
     public function delete($id){
         $categories=Category::find($id);
-        $categories->delete();
+        $categories->delete(); //apply delete from categories where id='$id'
         return redirect()->route('showCategory');
     }
 

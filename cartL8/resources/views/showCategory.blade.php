@@ -52,7 +52,8 @@
                     <tr>
                         <td>{{$category->id}}</td>
                         <td>{{$category->name}}</td>
-                        <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{ route('deleteCategory', ['id' => $category->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')"
+>Delete</a></td>
                     </tr>
                     @endforeach
                     
