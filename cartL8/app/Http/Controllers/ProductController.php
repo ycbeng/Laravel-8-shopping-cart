@@ -22,6 +22,11 @@ class productController extends Controller
             
         ]);
         
-        Return view('insertProduct');// step 5 back to last page
+        return redirect()->route('showProduct');
+    }
+
+    public function show(){
+        $products=Product::all();
+        return view('showProduct')->with('products',$products);
     }
 }
