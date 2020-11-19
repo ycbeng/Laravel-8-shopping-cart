@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product; 
+use App\Models\Category; 
 
 class productController extends Controller
 {
     //
+    public function create(){
+        return view('insertProduct') ->with('categories',Category::all());;
+    }
+
+
     public function store(){    //step 2 
         $r=request(); //step 3 get data from HTML
         $addCategory=Product::create([    //step 3 bind data
