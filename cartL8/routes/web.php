@@ -21,6 +21,10 @@ Route::get('/insertCategory', function () {
     return view('insertCategory');
 });
 
+Route::get('/insertProduct', function () {
+    return view('insertProduct');
+});
+
 Route::get('/contactus', function () {
     return view('contact');
 });
@@ -32,6 +36,9 @@ Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::c
 Route::get('/showCategory', [App\Http\Controllers\CategoryController::class, 'show'])->name('showCategory');
 
 Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::class, 'delete'])->name('deleteCategory');
+
+
+Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
 
 
 Auth::routes();
