@@ -30,6 +30,10 @@
                         <label for="quantity" class="label">Quantity</label>
                         <input type="number" name="quantity" id="quantity">
                     </p>
+
+                    <p>
+                        <input type="file" class="form-control" name="product-image" value="">
+                    </p>
                     <p>
                         <input type="submit" name="insert" value="Insert">
                     </p>

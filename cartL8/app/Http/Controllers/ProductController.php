@@ -17,6 +17,10 @@ class productController extends Controller
 
     public function store(){    //step 2 
         $r=request(); //step 3 get data from HTML
+        $image=$r->file('product-image');   //step to upload image get the file input
+        $image->move('images',$image->getClientOriginalName());   //images is the location                
+        $imageName=$image->getClientOriginalName(); 
+
         $addCategory=Product::create([    //step 3 bind data
             'id'=>$r->ID, //add on 
             'name'=>$r->name, //fullname from HTML
@@ -24,7 +28,7 @@ class productController extends Controller
             'categoryID'=>$r->category,
             'price'=>$r->price,
             'quantity'=>$r->quantity,
-            'image'=>'-',
+            'image'=>$imageName,
             
         ]);
         
