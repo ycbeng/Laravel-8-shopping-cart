@@ -1,4 +1,4 @@
-# Laravel7-Shopping-Cart
+# Laravel 8 -Shopping-Cart
 
 Create a New Project
 1) Use terminal and go to particular directory C:/xampp/htdocs
