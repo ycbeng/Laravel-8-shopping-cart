@@ -2,7 +2,7 @@
 @section('content') 
             <div>
                 <div style="text-align:center"> 
-                    <form class="subform"  method="post" action="{{ route('editProduct') }}" enctype="multipart/form-data">
+                    <form class="subform"  method="post" action="{{ route('editproduct') }}" enctype="multipart/form-data">
                     @csrf <!-- very important if you didn't insert CSRF, it not allow submit the data-->
                     <p>
                         <h3>Edit Product</h3>

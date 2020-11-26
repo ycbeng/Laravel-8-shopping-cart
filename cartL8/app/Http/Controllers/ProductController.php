@@ -52,4 +52,10 @@ class productController extends Controller
                                 ->with('categories',Category::all());
     }
 
+    public function delete($id){
+        $products=Product::find($id);
+        $products->delete();
+        return redirect()->route('showProduct');
+    }
+
 }
