@@ -46,6 +46,8 @@ Route::get('/editproduct/{id}', [App\Http\Controllers\ProductController::class, 
 
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
 
+Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateproduct');
+
 
 Auth::routes();
 

@@ -58,4 +58,22 @@ class productController extends Controller
         return redirect()->route('showProduct');
     }
 
+    public function update(){
+        $r=request();//retrive submited form data
+        $products =Product::find($r->ID);  //get the record based on product ID      
+        if($r->file('product-image')!=''){
+            $image=$r->file('product-image');        
+            $image->move('images',$image->getClientOriginalName());                   
+            $imageName=$image->getClientOriginalName(); 
+            $products->image=$imageName;
+            }         
+        $products->name=$r->name;
+        $products->description=$r->description;
+        $products->price=$r->price;
+        $products->quantity=$r->quantity;
+        $products->categoryID=$r->category;
+        $products->save(); //run the SQL update statment
+        return redirect()->route('showProduct');
+    }
+
 }

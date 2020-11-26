@@ -3,7 +3,7 @@
             <div class="container" >
                 <div class="row" style="text-align:right">
                     
-                    <form class="form-group"  method="post" action="#" enctype="multipart/form-data" >
+                    <form class="form-group"  method="post" action="{{ route('updateproduct') }}" enctype="multipart/form-data" >
                     @csrf <!-- very important if you didn't insert CSRF, it not allow submit the data-->
                     <p>
                         <h3>Edit Product</h3>
