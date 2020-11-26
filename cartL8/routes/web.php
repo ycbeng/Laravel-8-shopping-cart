@@ -42,7 +42,7 @@ Route::get('/showProduct', [App\Http\Controllers\ProductController::class, 'show
 
 Route::get('/insertProduct', [App\Http\Controllers\ProductController::class, 'create'])->name('insertProduct');
 
-Route::get('/editProduct', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
+Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
 
 Auth::routes();
 
