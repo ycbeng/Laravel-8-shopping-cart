@@ -42,4 +42,14 @@ class productController extends Controller
         $products=Product::all();
         return view('showProduct')->with('products',$products);
     }
+
+    public function edit($id){
+       
+        $products =Product::all()->where('id',$id);
+        //select * from products where id='$id'
+        
+        return view('editproduct')->with('products',$products)
+                                ->with('categories',Category::all());
+    }
+
 }
