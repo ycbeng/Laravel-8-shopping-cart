@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('content') 
-            <div>
-                <div style="text-align:center"> 
-                    <form class="subform"  method="post" action="#" enctype="multipart/form-data">
+            <div class="container" >
+                <div class="row" style="text-align:right">
+                    
+                    <form class="form-group"  method="post" action="#" enctype="multipart/form-data" >
                     @csrf <!-- very important if you didn't insert CSRF, it not allow submit the data-->
                     <p>
                         <h3>Edit Product</h3>
@@ -21,6 +22,7 @@
                         <label for="description" class="label">Description</label>
                         <input type="text" name="description" id="description" value="{{$product->description}}">
                     </p>
+                    <div class="form-group">
                     <select name= "category" id= "category" class="form-control">
                         @foreach($categories as $category)
                         <option  value="{{ $category->id }}"
@@ -30,7 +32,7 @@
                         >{{ $category->name }}</option>
                         @endforeach
                     </select> 
-
+                    </div>
                     <p>
                         <label for="price" class="label">Price</label>
                         <input type="number" name="price" id="Price" value="{{$product->price}}">
@@ -49,6 +51,7 @@
                         <input type="submit" name="edit" value="edit">
                     </p>
                     </form>
+                    
                 </div>
             </div>
 @endsection
