@@ -9,9 +9,12 @@ use App\Models\Category;
 Use Session;
 
 
+
 class productController extends Controller
 {
     //
+  
+
     public function create(){
         return view('insertProduct') ->with('categories',Category::all());;
     }
@@ -39,11 +42,8 @@ class productController extends Controller
     }
 
     public function show(){
-        //$products=Product::all();
-        $products=DB::table('products')
-        ->leftjoin('categories', 'categories.id', '=', 'products.categoryID')
-        ->select('categories.name as catname','categories.id as catid','products.*')
-        ->paginate(3); 
+        $products=Product::paginate(4);
+        
         return view('showProduct')->with('products',$products);
     }
 
@@ -89,7 +89,7 @@ class productController extends Controller
         ->where('products.name', 'like', '%' . $keyword . '%')
         ->orWhere('products.description', 'like', '%' . $keyword . '%')
         //->get();
-        ->paginate(3); 
+        ->paginate(4); 
                
         return view('showProduct')->with('products',$products);
 
