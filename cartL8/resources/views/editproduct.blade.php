@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content') 
             <div class="container" >
                 <div class="row" style="text-align:right">
@@ -54,4 +55,7 @@
                     
                 </div>
             </div>
+@endsection
+
+@section('aaa')
 @endsection

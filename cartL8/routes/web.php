@@ -50,6 +50,13 @@ Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'u
 
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
 
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'showProducts'])->name('products');
+
+Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
+
+//productdetail.blade.php?id=11
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
