@@ -53,8 +53,13 @@ Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 's
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'showProducts'])->name('products');
 
 Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
-
 //productdetail.blade.php?id=11
+
+Route::post('/addToCart', [App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart'); // when user click on add to cart in product detail, id and quantity add to cart
+
+Route::get('/myCart', [App\Http\Controllers\CartController::class, 'show'])->name('my.cart');  //user view all items added to cart
+
+
 
 
 Auth::routes();
