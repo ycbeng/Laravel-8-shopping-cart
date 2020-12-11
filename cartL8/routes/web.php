@@ -59,7 +59,7 @@ Route::post('/addToCart', [App\Http\Controllers\CartController::class, 'add'])->
 
 Route::get('/myCart', [App\Http\Controllers\CartController::class, 'show'])->name('my.cart');  //user view all items added to cart
 
-
+Route::get('/showmyCart', [App\Http\Controllers\CartController::class, 'showMyCart'])->name('show.myCart');
 
 
 Auth::routes();
