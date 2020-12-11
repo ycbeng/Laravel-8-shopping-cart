@@ -10,6 +10,8 @@
 
 <div class="container">
 	    <div class="row">
+        <form   method="post" action="{{ route('create.order') }}" >
+            @csrf
 		    <table class="table table-hover table-striped">
 		        <thead>
 		        <tr class="thead-dark">
@@ -24,7 +26,7 @@
 		        <tbody>	
                 @foreach($carts as $cart)
 		            <tr>
-		                <td>#</td>
+		                <td><input type="checkbox" name="item[]" /></td>
                         <td><img src="{{ asset('images/') }}/{{$cart->image}}" alt="" width="50"></td>
 		                <td style="max-width:300px">
 		                    <h6>{{$cart->name}}</h6>	                    
@@ -39,7 +41,15 @@
 		            </tr> 
                 @endforeach
 
-				
+                <tr class="thead-dark">
+		            <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+		            <td>&nbsp;</td>                   
+		            <td>Total</td>
+		            <td><input type="text" name="amount" id="amount" value="1000"></td>
+                    <td><input type="submit" name="checkout" value="Checkout"></td>
+		        </tr>
+				</form>
 		        </tbody>
 		    </table>
 		
