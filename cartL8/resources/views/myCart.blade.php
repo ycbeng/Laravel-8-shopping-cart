@@ -26,7 +26,7 @@
 		        <tbody>	
                 @foreach($carts as $cart)
 		            <tr>
-		                <td><input type="checkbox" name="item[]" /></td>
+		                <td><input type="checkbox" name="item[]" value="{{$cart->cid}}" /></td>
                         <td><img src="{{ asset('images/') }}/{{$cart->image}}" alt="" width="50"></td>
 		                <td style="max-width:300px">
 		                    <h6>{{$cart->name}}</h6>	                    

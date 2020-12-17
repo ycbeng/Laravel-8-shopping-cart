@@ -19,7 +19,7 @@ class OrderController extends Controller
             
             'amount'=>$r->amount,             
             'paymentStatus'=>'pending',                 
-            'userID'=>Auth::id(),                         
+            'userID'=>Auth::id(),                          
         ]); 
         
         $orderID=DB::table('my_orders')->where('userID','=',Auth::id())->orderBy('created_at', 'desc')->first(); //get the lastest order ID        
@@ -32,7 +32,19 @@ class OrderController extends Controller
         }
         
         Session::flash('success',"Order succesful!");        
-        Return redirect()->route('show.myCart'); //redirect to payment
+        Return redirect()->route('my.order'); //redirect to payment
         
+    }
+
+    public function show(){
+
+        $myorders=DB::table('my_orders')
+        ->leftjoin('my_carts', 'my_orders.id', '=', 'my_carts.orderID')
+        ->leftjoin('products', 'products.id', '=', 'my_carts.productID')
+        ->select('my_carts.*','my_orders.*','products.*','my_carts.quantity as qty')
+        ->where('my_orders.userID','=',Auth::id())
+        ->get();
+        //->paginate(3);       
+        return view('myOrder')->with('myorders',$myorders);
     }
 }
