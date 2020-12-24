@@ -50,6 +50,9 @@ Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'u
 
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
 
+Route::get('/search',[App\Http\Controllers\ProductController::class, 'index'])->name('search');
+Route::get('/autocomplete',[App\Http\Controllers\ProductController::class, 'autocomplete'])->name('autocomplete');
+
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'showProducts'])->name('products');
 
 Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
