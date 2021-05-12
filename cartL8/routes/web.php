@@ -78,4 +78,5 @@ Route::get('/pdfReport', [App\Http\Controllers\PDFController::class, 'pdfReport'
 
 Auth::routes();
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
